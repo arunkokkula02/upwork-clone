@@ -12,7 +12,19 @@ module.exports = {
         type: Sequelize.STRING
       },
       avatar: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        validate:{
+          isUrl:true
+        }
+      },
+      title: {
+        type:Sequelize.STRING
+      },
+      bio : {
+        type:Sequelize.TEXT
+      },
+      skills:{
+      type:Sequelize.STRING
       },
       
       createdAt: {
