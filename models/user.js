@@ -10,8 +10,9 @@ module.exports = (sequelize, DataTypes) => {
       email: {
         type: DataTypes.STRING,
         unique:true,
+        allowNull:false,
         validate:{
-          isEmail:true
+          isEmail:{args:true,msg:"Email is required"}
         }
       },
       isFreelancer: {

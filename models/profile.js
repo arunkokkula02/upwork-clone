@@ -1,6 +1,6 @@
 'use strict';
-module.exports = (DataTypes, DataTypes) => {
-  const Profile = DataTypes.define('Profile', {
+module.exports = (sequelize, DataTypes) => {
+  const Profile = sequelize.define('Profile', {
     phoneno: DataTypes.STRING,
     avatar: DataTypes.STRING,
     avatar: {

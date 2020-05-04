@@ -3,14 +3,25 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Bids', {
       freelancerId: {
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      jobsId: {
-       
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
+        type:Sequelize.INTEGER,
+        references :{
+          model:'Users',
+          key:'id'
+        },
+        onDelete:"CASCADE",
+        onUpdate:"CASCADE"
+      }
+        ,
+        jobsId: {
+          type:Sequelize.INTEGER,
+          references :{
+            model:'Jobs',
+            key:'id'
+          },
+        onDelete:"CASCADE",
+        onUpdate:"CASCADE"
+        }
+          ,
       
       createdAt: {
         allowNull: false,
@@ -20,6 +31,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    
     });
   },
   down: (queryInterface, Sequelize) => {
