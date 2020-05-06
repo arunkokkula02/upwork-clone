@@ -17,11 +17,21 @@ module.exports = (sequelize, DataTypes) => {
     },
     skills:{
     type:DataTypes.STRING
-    }
+    },
+    userId: {
+      type:DataTypes.INTEGER,
+      references :{
+        model:'Users',
+        key:'id'
+      },
+      onDelete:"SET NULL",
+      onUpdate:"CASCADE"
+  }
   }, {});
   Profile.associate = function(models) {
     // associations can be defined here
     Profile.belongsToMany(models.Job,{through:'Bids',foreignKey: 'freelancerId'})
+    Profile.belongsTo(models.User)
   };
   return Profile;
 };

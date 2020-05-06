@@ -13,7 +13,16 @@ module.exports = (sequelize, DataTypes) => {
     payment_verified: {
       type: DataTypes.BOOLEAN,
       defaultValue:false
-    }
+    },
+    userId: {
+      type:DataTypes.INTEGER,
+      references :{
+        model:'Users',
+        key:'id'
+      },
+      onDelete:"SET NULL",
+      onUpdate:"CASCADE"
+  }
   }, {});
   EmployerProfile.associate = function(models) {
     // associations can be defined here

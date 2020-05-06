@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const userRouter = require('./api/routes/User');
 const freelancerRouter = require('./api/routes/FreelanceProfile');
+const employerRouter = require('./api/routes/EmployerProfile');
+const jobsRouter = require('./api/routes/Jobs');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -16,6 +18,9 @@ app.use((req, res, next) => {
 
 app.use('/api/user',userRouter);
 app.use('/api/profile',freelancerRouter);
+app.use('/api/profile',employerRouter);
+app.use('/api',jobsRouter);
+
 
 module.exports = app;
 
