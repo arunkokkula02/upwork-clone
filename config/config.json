@@ -1,11 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "nyambane123",
+    "password": "Chirchir1.",
     "database": "upworkdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
-    
   },
   "test": {
     "username": "root",
