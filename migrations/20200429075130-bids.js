@@ -2,6 +2,12 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Bids', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
       freelancerId: {
         type:Sequelize.INTEGER,
         references :{
@@ -21,7 +27,11 @@ module.exports = {
         onDelete:"CASCADE",
         onUpdate:"CASCADE"
         }
-          ,
+        ,
+        status: {
+       type:Sequelize.BOOLEAN,
+       defaultValue:false
+        },
       
       createdAt: {
         allowNull: false,

@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Job.associate = function(models) {
     // associations can be
-  Job.belongsToMany(models.Profile,{through:'Bids',foreignKey: 'jobsId'});
+  Job.belongsToMany(models.User,{through:'Bids',foreignKey: 'jobsId',as: 'jobbidders'});
   Job.belongsTo(models.User)
   };
   return Job;

@@ -40,8 +40,9 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function (models) {
     // associations can be defined here
     User.hasOne(models.Profile);
-    User.hasMany(models.Job);
+    
     User.hasOne(models.EmployerProfile);
+    User.belongsToMany(models.Job, {through: 'Bids', foreignKey: 'freelancerId', as: 'jobbids'})
   };
   return User;
 };
