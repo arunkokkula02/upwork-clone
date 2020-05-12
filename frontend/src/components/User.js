@@ -4,13 +4,14 @@ import {UserContext} from '../context/UserConext';
 
 
 const User = () => {
-  const {data}= useContext(UserContext)
-  console.log(data);
+  const {state}= useContext(UserContext)
+  const {data} = state;
+  console.log(data)
 
-  return ( 
-    <div>
-      
-    </div>
+return ( 
+  <div>
+    
+  </div>
    );
 }
  
