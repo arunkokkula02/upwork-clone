@@ -1,10 +1,10 @@
 # upwork-clone
 
 ## user endpoints 
-  create user -> post `/api/user` 
-  get one user -> get `/api/user/:id` 
-  update user-> put `/api/user/:id`
-  user login-> post `/api/user/:id`
+  * create user -> post `/api/user` 
+  * get one user -> get `/api/user/:id` 
+  * update user-> put `/api/user/:id`
+  * user login-> post `/api/user/:id`
 
 ## Freelancer profile endpoints 
   * create profile  -> post `/api/profile/freelancer/:userid` 
