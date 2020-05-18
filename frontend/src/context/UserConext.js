@@ -43,7 +43,7 @@ const UserContextProvider = (props) => {
   const [state, dispatch] =useReducer(reducer,intialstate);
 
    useEffect(()=> {
-    fetch('http://localhost:5000/api/profile/freelancers')
+    fetch('/api/profile/freelancers')
     .then((response)=> response.json())
     .then((data) => {
       return dispatch({type:'FETCH_SUCCESS',payload:data})

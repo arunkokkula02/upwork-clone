@@ -68,7 +68,7 @@ exports.login = async (req, res) => {
     'RANDOM_TOKEN_SECRET',
     { expiresIn: '24h' });
   return res.status(200).json({
-    userId: userExist.dataValues.id,
+    userId: userExist.dataValues,
     token: token
   })
 }
